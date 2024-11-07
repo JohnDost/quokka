@@ -1,0 +1,9 @@
+[dependencies]
+anchor-lang = "0.23.0"
+anchor-spl = "0.23.0"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[features]
+no-entrypoint = []
