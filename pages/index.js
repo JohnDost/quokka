@@ -1,42 +1,89 @@
-import { useState } from 'react';
+import Head from "next/head";
+import styles from "../styles/home.module.css";
 
 export default function Home() {
-    const [recipientPublicKey, setRecipientPublicKey] = useState('');
-    const [amount, setAmount] = useState('');
-    const [liquidityBalance, setLiquidityBalance] = useState(null);
+  return (
+    <div>
+      <Head>
+        <title>Angry Quokka Token - Memecoin Edition</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main>
+        <div className={styles.container}>
+          <div className={styles.hero}>
+            <img src="angry_quokka_logo.png" alt="Angry Quokka Logo" />
+            <h1>Angry Quokka Token</h1>
+            <p>The fiercest, friendliest memecoin of the year!</p>
+          </div>
 
-    const handleICOTransfer = async () => {
-        const res = await fetch('/api/manageICO', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ recipientPublicKey, amount }),
-        });
-        const data = await res.json();
-        alert(data.status || data.error);
-    };
+          <div className={styles.section}>
+            <h2>About Angry Quokka</h2>
+            <p>
+              Angry Quokka is here to shake up the crypto world! Inspired by
+              popular memecoins like Dogecoin, Shiba Inu, and PepeCoin, Angry
+              Quokka is a community-driven token for fun, friendship, and, of
+              course, a bit of chaos.
+            </p>
+          </div>
 
-    const checkLiquidity = async () => {
-        const res = await fetch('/api/monitorLiquidity');
-        const data = await res.json();
-        setLiquidityBalance(data.liquidityBalance || 'Failed to fetch');
-    };
+          <div className={styles.section}>
+            <h2>Tokenomics</h2>
+            <table>
+              <tr>
+                <th>Allocation</th>
+                <th>Percentage</th>
+              </tr>
+              <tr>
+                <td>Community</td>
+                <td>50%</td>
+              </tr>
+              <tr>
+                <td>Team</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>Development</td>
+                <td>15%</td>
+              </tr>
+              <tr>
+                <td>Marketing</td>
+                <td>10%</td>
+              </tr>
+              <tr>
+                <td>Liquidity</td>
+                <td>5%</td>
+              </tr>
+            </table>
+          </div>
 
-    return (
-        <div>
-            <h1>Quokka Memecoin Dashboard</h1>
+          <div className={styles.section}>
+            <h2>Roadmap</h2>
+            <ul>
+              <li>
+                <strong>Q4 2024:</strong> Website launch, build community
+              </li>
+              <li>
+                <strong>Q1 2025:</strong> Token launch and exchange listings
+              </li>
+              <li>
+                <strong>Q2 2025:</strong> Expand partnerships, increase
+                marketing
+              </li>
+            </ul>
+          </div>
 
-            <div>
-                <h2>ICO Transfer</h2>
-                <input type="text" placeholder="Recipient Public Key" value={recipientPublicKey} onChange={(e) => setRecipientPublicKey(e.target.value)} />
-                <input type="number" placeholder="Amount" value={amount} onChange={(e) => setAmount(e.target.value)} />
-                <button onClick={handleICOTransfer}>Transfer Tokens</button>
-            </div>
+          <div className={styles.community}>
+            <h2>Join the Community</h2>
+            <a href="https://twitter.com/AngryQuokka">Twitter</a>
+            <a href="https://discord.gg/AngryQuokka">Discord</a>
+            <a href="https://t.me/AngryQuokka">Telegram</a>
+          </div>
 
-            <div>
-                <h2>Liquidity Pool Balance</h2>
-                <button onClick={checkLiquidity}>Check Balance</button>
-                {liquidityBalance && <p>Liquidity Pool Balance: {liquidityBalance}</p>}
-            </div>
+          <div className={styles.footer}>
+            <p>&copy; 2024 Angry Quokka Token. All rights reserved.</p>
+          </div>
         </div>
-    );
+      </main>
+    </div>
+  );
 }

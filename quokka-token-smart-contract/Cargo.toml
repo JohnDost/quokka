@@ -1,7 +1,0 @@
-[workspace]
-members = [
-    "programs/quokka-token"
-]
-
-[dependencies]
-anchor-lang = "0.23.0"
