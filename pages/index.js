@@ -74,9 +74,9 @@ export default function Home() {
 
           <div className={styles.community}>
             <h2>Join the Community</h2>
-            <a href="https://twitter.com/AngryQuokka">Twitter</a>
-            <a href="https://discord.gg/AngryQuokka">Discord</a>
-            <a href="https://t.me/AngryQuokka">Telegram</a>
+            <a href="https://x.com/angryquokkacoin">Twitter</a>
+            <a href="https://t.co/U5HBZKob62">Discord</a>
+            <!--a href="https://t.me/AngryQuokka">Telegram</a-->
           </div>
 
           <div className={styles.footer}>
