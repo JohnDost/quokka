@@ -74,7 +74,7 @@ export default function Home() {
 
           <div className={styles.community}>
             <h2>Join the Community</h2>
-            <a href="https://x.com/angryquokkacoin">Twitter</a>
+            <a href="https://x.com/coinangryquokka">Twitter</a>
             <a href="https://t.co/U5HBZKob62">Discord</a>
           </div>
 
