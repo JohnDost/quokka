@@ -12,7 +12,7 @@ function App() {
                             <li><a href="#roadmap" style={{ color: "#ffffff", fontWeight: "bold" }}>Roadmap</a></li>
                             <li><a href="#tokenomics" style={{ color: "#ffffff", fontWeight: "bold" }}>Tokenomics</a></li>
                             <li><a href="#airdrop" style={{ color: "#ffffff", fontWeight: "bold" }}>Airdrop</a></li>
-                        </ul>
+                        </ul> 
                     </nav>
                 </div>
             </header>
