@@ -1,7 +1,7 @@
 /* Styling inspired by popular memecoin aesthetics */
 
 body {
-  font-family: Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   margin: 0;
