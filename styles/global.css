@@ -1,13 +1,16 @@
 /* Styling inspired by popular memecoin aesthetics */
 
 body {
-  font-family: "Comic Sans MS", Arial, sans-serif;
-  background-color: #f4f4f4; /* Light background for a fun feel */
-  color: #333;
+  font-family: Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
 }
-
+ h1, h2 {
+font-family: 'Bangers', cursive;
+            color: var(--primary-color);
+}
 /* Tokenomics Table */
 table {
   width: 100%;
