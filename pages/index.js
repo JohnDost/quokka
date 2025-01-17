@@ -62,7 +62,7 @@ function App() {
                 <div className="container">
                     <h2>Claim Your Airdrop</h2>
                     <p>Join the first 1,000 quokka fans and receive free $AQC tokens! Don’t miss out!</p>
-                    <a href="#" style={buttonStyle}>Sign Up Now</a>
+                    <a href="https://x.com/coinangryquokka" style={buttonStyle}>Sign Up Now</a>
                 </div>
             </section>
 
