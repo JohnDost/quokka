@@ -49,3 +49,79 @@ ul li {
   border-radius: 5px;
   text-align: center;
 }
+a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            padding: 20px 0;
+        }
+
+        header .logo {
+            max-height: 60px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+        }
+
+        header nav ul li a {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        #hero {
+            background: var(--primary-color);
+            color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #roadmap, #about, #tokenomics, #airdrop {
+            padding: 50px 20px;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .socials a {
+            margin: 0 10px;
+            color: var(--accent-color);
+        }
+
+        footer .socials a:hover {
+            color: var(--primary-color);
+        }
