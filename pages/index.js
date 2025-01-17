@@ -5,7 +5,7 @@ function App() {
         <div>
             <header style={{ backgroundColor: "#264653", padding: "20px 0" }}>
                 <div className="container">
-                    <img src="public/angry_quokka_logo.png/angry_quokka_logo.png" alt="Angry Quokka Coin Logo" style={{ maxHeight: "60px" }} />
+                    <img src="logo.png" alt="Angry Quokka Coin Logo" style={{ maxHeight: "60px" }} />
                     <nav>
                         <ul style={{ listStyle: "none", display: "flex", gap: "20px", padding: 0 }}>
                             <li><a href="#about" style={{ color: "#ffffff", fontWeight: "bold" }}>About</a></li>
