@@ -52,7 +52,7 @@ function App() {
                         <li><strong>Public/Fair Launch:</strong> 50%</li>
                         <li><strong>Community Airdrops:</strong> 15%</li>
                         <li><strong>Staking/Rewards:</strong> 15%</li>
-                        <li><strong>Team:</strong> 15% (locked for 12 months)</li>
+                        <li><strong>Team:</strong> 15%</li>
                         <li><strong>Reserves:</strong> 5%</li>
                     </ul>
                 </div>
