@@ -48,7 +48,7 @@ function App() {
                 <div className="container">
                     <h2>Tokenomics</h2>
                     <ul>
-                        <li><strong>Total Supply:</strong> 1,000,000,000 $AQC</li>
+                        <li><strong>Total Supply:</strong> 1,000,000,000,000 $AQC</li>
                         <li><strong>Public/Fair Launch:</strong> 50%</li>
                         <li><strong>Community Airdrops:</strong> 15%</li>
                         <li><strong>Staking/Rewards:</strong> 15%</li>
