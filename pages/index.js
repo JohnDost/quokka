@@ -1,6 +1,4 @@
 import React from "react";
-import { WalletProvider } from '@solana/wallet-adapter-react';
-import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 
 function App() {
     return (
