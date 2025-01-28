@@ -1,19 +1,14 @@
-Complete Website with Airdrop Integration
-Preview
-Code
-
-import React from "react";
+import React, { useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircle, CheckCircle, Loader } from 'lucide-react';
 
-// Import the AirdropClaim component
-const AirdropClaim = () => {
+// Separate AirdropClaim component
+function AirdropClaim() {
   const [isWalletConnected, setIsWalletConnected] = useState(false);
   const [loading, setLoading] = useState(false);
   const [claimStatus, setClaimStatus] = useState(null);
   const [walletAddress, setWalletAddress] = useState('');
   
-  // Simulated claim info - in real implementation, this would come from your contract
   const claimInfo = {
     amount: '10,000',
     endDate: '2025-03-01',
@@ -133,102 +128,88 @@ const AirdropClaim = () => {
       </div>
     </div>
   );
-};
-
-function App() {
-    return (
-        <div>
-            <header style={{ backgroundColor: "#264653", padding: "20px 0" }}>
-                <div className="container">
-                    <img src="logo.png" alt="Angry Quokka Coin Logo" style={{ maxHeight: "60px" }} />
-                    <nav style={{position: "absolute", left: "7%", top: "1%" }}>
-                        <ul style={{ listStyle: "none", display: "flex", gap: "20px", padding: 0 }}>
-                            <li><a href="#about" style={{ color: "#ffffff", fontWeight: "bold" }}>About</a></li>
-                            <li><a href="#roadmap" style={{ color: "#ffffff", fontWeight: "bold" }}>Roadmap</a></li>
-                            <li><a href="#tokenomics" style={{ color: "#ffffff", fontWeight: "bold" }}>Tokenomics</a></li>
-                            <li><a href="#airdrop" style={{ color: "#ffffff", fontWeight: "bold" }}>Airdrop</a></li>
-                        </ul> 
-                    </nav>
-                </div>
-            </header>
-
-            <section id="hero" style={{ backgroundColor: "#FF6B35", color: "#ffffff", padding: "50px 20px", textAlign: "center" }}>
-                <div className="container">
-                    <h1>Welcome to Angry Quokka Coin ($AQC)</h1>
-                    <p>The most exciting memecoin on Solana. Join the Angry Quokka revolution today!</p>
-                    <a href="#airdrop" style={buttonStyle}>Claim Your Airdrop</a>
-                </div>
-            </section>
-
-            <section id="about" style={sectionStyle}>
-                <div className="container">
-                    <h2>What is Angry Quokka Coin?</h2>
-                    <p>$AQC is more than just a token; it's a movement. Inspired by the quirky and lovable quokka, we bring fun and community to the Solana blockchain.</p>
-                </div>
-            </section>
-
-            <section id="roadmap" style={sectionStyle}>
-                <div className="container">
-                    <h2>Roadmap</h2>
-                    <ul>
-                        <li><strong>Q1:</strong> Launch website, build community, and begin airdrop.</li>
-                        <li><strong>Q2:</strong> Token launch, exchange listings, and partnerships.</li>
-                        <li><strong>Q3:</strong> Community-driven events, charity initiatives, and expansion.</li>
-                        <li><strong>Q4:</strong> Enhance ecosystem, utility developments, and beyond.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="tokenomics" style={sectionStyle}>
-                <div className="container">
-                    <h2>Tokenomics</h2>
-                    <ul>
-                        <li><strong>Total Supply:</strong> 1,000,000,000,000 $AQC</li>
-                        <li><strong>Public/Fair Launch:</strong> 50%</li>
-                        <li><strong>Community Airdrops:</strong> 15%</li>
-                        <li><strong>Staking/Rewards:</strong> 15%</li>
-                        <li><strong>Team:</strong> 15%</li>
-                        <li><strong>Reserves:</strong> 5%</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="airdrop" style={sectionStyle}>
-                <div className="container">
-                    <h2>Claim Your Airdrop</h2>
-                    <p>Join the first 1,000 quokka fans and receive free $AQC tokens!</p>
-                    <AirdropClaim />
-                </div>
-            </section>
-
-            <footer style={{ backgroundColor: "#264653", color: "#ffffff", padding: "20px", textAlign: "center" }}>
-                <div className="container">
-                    <p>&copy; 2025 Angry Quokka Coin. All rights reserved.</p>
-                    <div className="socials">
-                        <a href="https://x.com/coinangryquokka" style={{ margin: "0 10px", color: "#FFD166" }}>Twitter</a>
-                        <a href="#" style={{ margin: "0 10px", color: "#FFD166" }}>Discord</a>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    );
 }
 
-const sectionStyle = {
-    padding: "50px 20px",
-};
+// Main App component
+function App() {
+  return (
+    <div>
+      <header className="bg-[#264653] py-5">
+        <div className="container mx-auto">
+          <img src="logo.png" alt="Angry Quokka Coin Logo" className="h-16" />
+          <nav className="absolute left-[7%] top-[1%]">
+            <ul className="flex gap-5 list-none p-0">
+              <li><a href="#about" className="text-white font-bold">About</a></li>
+              <li><a href="#roadmap" className="text-white font-bold">Roadmap</a></li>
+              <li><a href="#tokenomics" className="text-white font-bold">Tokenomics</a></li>
+              <li><a href="#airdrop" className="text-white font-bold">Airdrop</a></li>
+            </ul> 
+          </nav>
+        </div>
+      </header>
 
-const buttonStyle = {
-    display: "inline-block",
-    backgroundColor: "#FF6B35",
-    color: "#ffffff",
-    padding: "10px 20px",
-    borderRadius: "5px",
-    fontSize: "1rem",
-    textTransform: "uppercase",
-    fontWeight: "bold",
-    textAlign: "center",
-    textDecoration: "none",
-};
+      <section id="hero" className="bg-[#FF6B35] text-white py-12 px-5 text-center">
+        <div className="container mx-auto">
+          <h1 className="text-4xl font-bold mb-4">Welcome to Angry Quokka Coin ($AQC)</h1>
+          <p className="mb-6">The most exciting memecoin on Solana. Join the Angry Quokka revolution today!</p>
+          <a href="#airdrop" className="inline-block bg-[#FF6B35] text-white px-5 py-2 rounded font-bold uppercase">
+            Claim Your Airdrop
+          </a>
+        </div>
+      </section>
+
+      <section id="about" className="py-12 px-5">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-4">What is Angry Quokka Coin?</h2>
+          <p>$AQC is more than just a token; it's a movement. Inspired by the quirky and lovable quokka, we bring fun and community to the Solana blockchain.</p>
+        </div>
+      </section>
+
+      <section id="roadmap" className="py-12 px-5">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Roadmap</h2>
+          <ul className="space-y-2">
+            <li><strong>Q1:</strong> Launch website, build community, and begin airdrop.</li>
+            <li><strong>Q2:</strong> Token launch, exchange listings, and partnerships.</li>
+            <li><strong>Q3:</strong> Community-driven events, charity initiatives, and expansion.</li>
+            <li><strong>Q4:</strong> Enhance ecosystem, utility developments, and beyond.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="tokenomics" className="py-12 px-5">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Tokenomics</h2>
+          <ul className="space-y-2">
+            <li><strong>Total Supply:</strong> 1,000,000,000,000 $AQC</li>
+            <li><strong>Public/Fair Launch:</strong> 50%</li>
+            <li><strong>Community Airdrops:</strong> 15%</li>
+            <li><strong>Staking/Rewards:</strong> 15%</li>
+            <li><strong>Team:</strong> 15%</li>
+            <li><strong>Reserves:</strong> 5%</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="airdrop" className="py-12 px-5">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Claim Your Airdrop</h2>
+          <p className="mb-6">Join the first 1,000 quokka fans and receive free $AQC tokens!</p>
+          <AirdropClaim />
+        </div>
+      </section>
+
+      <footer className="bg-[#264653] text-white py-5 text-center">
+        <div className="container mx-auto">
+          <p className="mb-4">&copy; 2025 Angry Quokka Coin. All rights reserved.</p>
+          <div className="space-x-4">
+            <a href="https://x.com/coinangryquokka" className="text-[#FFD166]">Twitter</a>
+            <a href="#" className="text-[#FFD166]">Discord</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
 
 export default App;
