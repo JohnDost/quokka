@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircle, CheckCircle, Loader } from 'lucide-react';
+import Head from 'next/head';
 
-// Separate AirdropClaim component
+// AirdropClaim Component
 function AirdropClaim() {
   const [isWalletConnected, setIsWalletConnected] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -130,86 +131,93 @@ function AirdropClaim() {
   );
 }
 
-// Main App component
-function App() {
+// Main Page Component
+export default function Home() {
   return (
     <div>
-      <header className="bg-[#264653] py-5">
-        <div className="container mx-auto">
-          <img src="logo.png" alt="Angry Quokka Coin Logo" className="h-16" />
-          <nav className="absolute left-[7%] top-[1%]">
-            <ul className="flex gap-5 list-none p-0">
-              <li><a href="#about" className="text-white font-bold">About</a></li>
-              <li><a href="#roadmap" className="text-white font-bold">Roadmap</a></li>
-              <li><a href="#tokenomics" className="text-white font-bold">Tokenomics</a></li>
-              <li><a href="#airdrop" className="text-white font-bold">Airdrop</a></li>
-            </ul> 
-          </nav>
-        </div>
-      </header>
+      <Head>
+        <title>Angry Quokka Coin ($AQC)</title>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Angry Quokka Coin - The most exciting memecoin on Solana" />
+      </Head>
 
-      <section id="hero" className="bg-[#FF6B35] text-white py-12 px-5 text-center">
-        <div className="container mx-auto">
-          <h1 className="text-4xl font-bold mb-4">Welcome to Angry Quokka Coin ($AQC)</h1>
-          <p className="mb-6">The most exciting memecoin on Solana. Join the Angry Quokka revolution today!</p>
-          <a href="#airdrop" className="inline-block bg-[#FF6B35] text-white px-5 py-2 rounded font-bold uppercase">
-            Claim Your Airdrop
-          </a>
-        </div>
-      </section>
-
-      <section id="about" className="py-12 px-5">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-4">What is Angry Quokka Coin?</h2>
-          <p>$AQC is more than just a token; it's a movement. Inspired by the quirky and lovable quokka, we bring fun and community to the Solana blockchain.</p>
-        </div>
-      </section>
-
-      <section id="roadmap" className="py-12 px-5">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Roadmap</h2>
-          <ul className="space-y-2">
-            <li><strong>Q1:</strong> Launch website, build community, and begin airdrop.</li>
-            <li><strong>Q2:</strong> Token launch, exchange listings, and partnerships.</li>
-            <li><strong>Q3:</strong> Community-driven events, charity initiatives, and expansion.</li>
-            <li><strong>Q4:</strong> Enhance ecosystem, utility developments, and beyond.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="tokenomics" className="py-12 px-5">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Tokenomics</h2>
-          <ul className="space-y-2">
-            <li><strong>Total Supply:</strong> 1,000,000,000,000 $AQC</li>
-            <li><strong>Public/Fair Launch:</strong> 50%</li>
-            <li><strong>Community Airdrops:</strong> 15%</li>
-            <li><strong>Staking/Rewards:</strong> 15%</li>
-            <li><strong>Team:</strong> 15%</li>
-            <li><strong>Reserves:</strong> 5%</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="airdrop" className="py-12 px-5">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Claim Your Airdrop</h2>
-          <p className="mb-6">Join the first 1,000 quokka fans and receive free $AQC tokens!</p>
-          <AirdropClaim />
-        </div>
-      </section>
-
-      <footer className="bg-[#264653] text-white py-5 text-center">
-        <div className="container mx-auto">
-          <p className="mb-4">&copy; 2025 Angry Quokka Coin. All rights reserved.</p>
-          <div className="space-x-4">
-            <a href="https://x.com/coinangryquokka" className="text-[#FFD166]">Twitter</a>
-            <a href="#" className="text-[#FFD166]">Discord</a>
+      <div>
+        <header className="bg-[#264653] py-5">
+          <div className="container mx-auto">
+            <img src="/logo.png" alt="Angry Quokka Coin Logo" className="h-16" />
+            <nav className="absolute left-[7%] top-[1%]">
+              <ul className="flex gap-5 list-none p-0">
+                <li><a href="#about" className="text-white font-bold">About</a></li>
+                <li><a href="#roadmap" className="text-white font-bold">Roadmap</a></li>
+                <li><a href="#tokenomics" className="text-white font-bold">Tokenomics</a></li>
+                <li><a href="#airdrop" className="text-white font-bold">Airdrop</a></li>
+              </ul> 
+            </nav>
           </div>
-        </div>
-      </footer>
+        </header>
+
+        <section id="hero" className="bg-[#FF6B35] text-white py-12 px-5 text-center">
+          <div className="container mx-auto">
+            <h1 className="text-4xl font-bold mb-4">Welcome to Angry Quokka Coin ($AQC)</h1>
+            <p className="mb-6">The most exciting memecoin on Solana. Join the Angry Quokka revolution today!</p>
+            <a href="#airdrop" className="inline-block bg-[#FF6B35] text-white px-5 py-2 rounded font-bold uppercase">
+              Claim Your Airdrop
+            </a>
+          </div>
+        </section>
+
+        <section id="about" className="py-12 px-5">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-4">What is Angry Quokka Coin?</h2>
+            <p>$AQC is more than just a token; it's a movement. Inspired by the quirky and lovable quokka, we bring fun and community to the Solana blockchain.</p>
+          </div>
+        </section>
+
+        <section id="roadmap" className="py-12 px-5">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-4">Roadmap</h2>
+            <ul className="space-y-2">
+              <li><strong>Q1:</strong> Launch website, build community, and begin airdrop.</li>
+              <li><strong>Q2:</strong> Token launch, exchange listings, and partnerships.</li>
+              <li><strong>Q3:</strong> Community-driven events, charity initiatives, and expansion.</li>
+              <li><strong>Q4:</strong> Enhance ecosystem, utility developments, and beyond.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="tokenomics" className="py-12 px-5">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-4">Tokenomics</h2>
+            <ul className="space-y-2">
+              <li><strong>Total Supply:</strong> 1,000,000,000,000 $AQC</li>
+              <li><strong>Public/Fair Launch:</strong> 50%</li>
+              <li><strong>Community Airdrops:</strong> 15%</li>
+              <li><strong>Staking/Rewards:</strong> 15%</li>
+              <li><strong>Team:</strong> 15%</li>
+              <li><strong>Reserves:</strong> 5%</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="airdrop" className="py-12 px-5">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-4">Claim Your Airdrop</h2>
+            <p className="mb-6">Join the first 1,000 quokka fans and receive free $AQC tokens!</p>
+            <AirdropClaim />
+          </div>
+        </section>
+
+        <footer className="bg-[#264653] text-white py-5 text-center">
+          <div className="container mx-auto">
+            <p className="mb-4">&copy; 2025 Angry Quokka Coin. All rights reserved.</p>
+            <div className="space-x-4">
+              <a href="https://x.com/coinangryquokka" className="text-[#FFD166]">Twitter</a>
+              <a href="#" className="text-[#FFD166]">Discord</a>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
-
-export default App;
